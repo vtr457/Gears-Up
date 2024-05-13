@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promoções</title>
+    <style>
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            overflow: hidden;
+            margin: auto;
+        }
+
+        .slide {
+            display: none;
+            width: 100%;
+        }
+
+        .slide img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="slideshow-container">
+    <div class="slide">
+        <img src="imagem1.jpg" alt="Promoção 1">
+    </div>
+    <div class="slide">
+        <img src="imagem2.jpg" alt="Promoção 2">
+    </div>
+    <div class="slide">
+        <img src="imagem3.jpg" alt="Promoção 3">
+    </div>
+</div>
+
+<script>
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("slide");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        slides[slideIndex-1].style.display = "block";  
+        setTimeout(showSlides, 2000); // Altere este valor para ajustar a velocidade do slideshow (em milissegundos)
+    }
+</script>
+
+</body>
+</html>
